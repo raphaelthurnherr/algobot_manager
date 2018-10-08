@@ -10,7 +10,7 @@
  *
  * Created on 22. juin 2018, 08:45
  */
-#define VERSION "beta"
+#define VERSION "beta 1.0"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -33,7 +33,8 @@ int main(int argc, char** argv) {
     unsigned char total_length=15;
     
     char line[total_length];
-    
+
+    unsigned int sequencer=0;    
     pid_t pid;
     
     system("clear");
@@ -51,8 +52,9 @@ int main(int argc, char** argv) {
 // Initialisation UDP pour broadcast IP Adresse
     initUDP();
     
-    while(1){
-        
+    
+    while(1){  
+       
         // Contrôle de la messagerie, recherche d'éventuels messages ALGOID et effectue les traitements nécéssaire
         // selon le type du message [COMMAND, REQUEST, NEGOCIATION, ACK, REPONSE, ERROR, etc...]
         if(pullMsgStack(0)){
@@ -64,35 +66,24 @@ int main(int argc, char** argv) {
         }
         
         // Contrôle du TIMER 100mS
-    	if(t5secFlag){
-            wsTcpGataway_check();
-            t5secFlag=0;												// Quittance le flag 100mS
+    	if(t100msFlag){
+            switch(sequencer){
+    //            case 5:  wsTcpGataway_check(); break;
+                case 5: mosquitto_check(); break;
+                case 10: algoFirmware_check(); break;
+                default : break;
+            }		
+            
+            if(sequencer++>=15)
+                sequencer=0;
+            // Quittance le flag 100mS           
+            t100msFlag=0;
     	}
 
 
         
     }
     
-    /*
-    FILE * command = popen("pidof algobot_onionomega","r");
-    fgets(line,total_length,command);
-    pid=strtoul(line,NULL,10);
-    pclose(command);
-    
-    if(pid>0){
-        printf("Kill ALL Process algobot_onionomega... ");
-        //char sys_command [20] ="";
-        //sprintf(sys_command,"kill %d",pid);
-        //system(sys_command);
-        system("killall algobot_onionomega");
-        sleep(1);
-        printf("OK\n");
-    }
-    else {
-         printf("No process algobot_onionomega found !\n");
-         }
-      
-     */
     sleep(1);
     printf("Terminate Algobot manager ! Bye\n\n");
     return (EXIT_SUCCESS);
@@ -106,14 +97,11 @@ int main(int argc, char** argv) {
 // PROCESSCOMMAND
 // Séléctionne et traite le paramètre de commande recue [LL2WD, BACK, FORWARD, STOP, SPIN, etc...]
 // -------------------------------------------------------------------
-int processManagerCommand(void){
-    int i;
-    
+int processManagerCommand(void){    
 	switch(AlgoidCommand.msgParam){
 		case 123456 : 	break;
 		default : break;
 	}
-
 	return 0;
 }
 
@@ -130,15 +118,49 @@ int processManagerRequest(void){
 }
 
 int wsTcpGataway_check(){
-    int status;
+    int bashStatus=-1;
     
-    status=system("pgrep node");
+    printf("Process check wsTcpGataway:\n");
+    bashStatus=system("pgrep node");
     
-    if(WEXITSTATUS(status)){
+    if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, NODE GATEWAY IS DOWN, RESTARTING...\n");
-        system("ws-tcp-bridge --method=ws2tcp --lport=9001 --rhost=127.0.0.1:1883");
+        system("ws-tcp-bridge --method=ws2tcp --lport=9001 --rhost=127.0.0.1:1883&");
         usleep(500000);
-        system("ws-tcp-bridge --method=tcp2ws --lport=1883 --rhost=ws://127.0.0.1:9001");        
+        system("ws-tcp-bridge --method=tcp2ws --lport=1883 --rhost=ws://127.0.0.1:9001&");        
+        usleep(100000);
     }
-        
+    
+    printf("\n");
+    return 0;
 }
+    
+int mosquitto_check(){
+    int bashStatus=-1;
+    
+    printf("Process check mosquitto:\n");
+    bashStatus=system("pgrep mosquitto");
+
+    if(WEXITSTATUS(bashStatus)){
+        printf("MANAGER->WARNING, MOSQUITTO IS DOWN, RESTARTING...\n");
+        system("mosquitto -c /etc/mosquitto/conf.d/mosquitto.conf&");
+    }
+        printf("\n");
+    return 0;
+}
+
+int algoFirmware_check(){
+    int bashStatus=-1;
+    
+    printf("Process check algobot_onionomega: \n");
+    bashStatus=system("pgrep algobot_onion");
+    
+    if(WEXITSTATUS(bashStatus)){
+        printf("MANAGER->WARNING, ALGOBOT FIRMWARE IS DOWN, RESTARTING...\n");
+        system("./algobot/algobot_onionomega&");      
+    }        
+    
+    printf("\n");
+    return 0;
+}
+
