@@ -143,7 +143,7 @@ int mosquitto_check(){
 
     if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, MOSQUITTO IS DOWN, RESTARTING...\n");
-        system("mosquitto -c /etc/mosquitto/conf.d/mosquitto.conf &");
+        system("mosquitto -c /etc/mosquitto/conf.d/mosquitto.conf&");
     }
         printf("\n");
     return 0;
@@ -157,7 +157,7 @@ int algoFirmware_check(){
     
     if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, ALGOBOT FIRMWARE IS DOWN, RESTARTING...\n");
-        system("./algobot/algobot_onionomega -n algo_cloud_sim &");      
+        system("./algobot/algobot_onionomega -n algo_cloudsim&");      
     }        
     
     printf("\n");
