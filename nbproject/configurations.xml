@@ -304,6 +304,14 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>Include</pElem>
+            <pElem>Directories</pElem>
+            <pElem>AlgoidCom/libs/lib_json</pElem>
+            <pElem>AlgoidCom/libs/lib_mqtt</pElem>
+            <pElem>AlgoidCom</pElem>
+          </incDir>
+          <commandLine>-pthread</commandLine>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
@@ -314,6 +322,9 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <commandLine>-pthread</commandLine>
+        </linkerTool>
       </compileType>
       <item path="AlgoidCom/libs/lib_json/jRead.c" ex="false" tool="0" flavor2="0">
       </item>

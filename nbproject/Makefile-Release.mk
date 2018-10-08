@@ -65,7 +65,7 @@ OBJECTFILES= \
 
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-pthread
 
 # CC Compiler Flags
 CCFLAGS=
@@ -86,142 +86,142 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algobotmanager: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algobotmanager ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algobotmanager ${OBJECTFILES} ${LDLIBSOPTIONS} -pthread
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_json/jRead.o: AlgoidCom/libs/lib_json/jRead.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_json
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_json/jRead.o AlgoidCom/libs/lib_json/jRead.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_json/jRead.o AlgoidCom/libs/lib_json/jRead.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_json/jWrite.o: AlgoidCom/libs/lib_json/jWrite.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_json
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_json/jWrite.o AlgoidCom/libs/lib_json/jWrite.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_json/jWrite.o AlgoidCom/libs/lib_json/jWrite.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Clients.o: AlgoidCom/libs/lib_mqtt/Clients.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Clients.o AlgoidCom/libs/lib_mqtt/Clients.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Clients.o AlgoidCom/libs/lib_mqtt/Clients.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Heap.o: AlgoidCom/libs/lib_mqtt/Heap.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Heap.o AlgoidCom/libs/lib_mqtt/Heap.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Heap.o AlgoidCom/libs/lib_mqtt/Heap.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/LinkedList.o: AlgoidCom/libs/lib_mqtt/LinkedList.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/LinkedList.o AlgoidCom/libs/lib_mqtt/LinkedList.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/LinkedList.o AlgoidCom/libs/lib_mqtt/LinkedList.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Log.o: AlgoidCom/libs/lib_mqtt/Log.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Log.o AlgoidCom/libs/lib_mqtt/Log.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Log.o AlgoidCom/libs/lib_mqtt/Log.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTClient.o: AlgoidCom/libs/lib_mqtt/MQTTClient.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTClient.o AlgoidCom/libs/lib_mqtt/MQTTClient.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTClient.o AlgoidCom/libs/lib_mqtt/MQTTClient.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacket.o: AlgoidCom/libs/lib_mqtt/MQTTPacket.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacket.o AlgoidCom/libs/lib_mqtt/MQTTPacket.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacket.o AlgoidCom/libs/lib_mqtt/MQTTPacket.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacketOut.o: AlgoidCom/libs/lib_mqtt/MQTTPacketOut.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacketOut.o AlgoidCom/libs/lib_mqtt/MQTTPacketOut.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPacketOut.o AlgoidCom/libs/lib_mqtt/MQTTPacketOut.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistence.o: AlgoidCom/libs/lib_mqtt/MQTTPersistence.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistence.o AlgoidCom/libs/lib_mqtt/MQTTPersistence.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistence.o AlgoidCom/libs/lib_mqtt/MQTTPersistence.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.o: AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.o AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.o AlgoidCom/libs/lib_mqtt/MQTTPersistenceDefault.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.o: AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.o AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.o AlgoidCom/libs/lib_mqtt/MQTTProtocolClient.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.o: AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.o AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.o AlgoidCom/libs/lib_mqtt/MQTTProtocolOut.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Messages.o: AlgoidCom/libs/lib_mqtt/Messages.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Messages.o AlgoidCom/libs/lib_mqtt/Messages.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Messages.o AlgoidCom/libs/lib_mqtt/Messages.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SSLSocket.o: AlgoidCom/libs/lib_mqtt/SSLSocket.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SSLSocket.o AlgoidCom/libs/lib_mqtt/SSLSocket.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SSLSocket.o AlgoidCom/libs/lib_mqtt/SSLSocket.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Socket.o: AlgoidCom/libs/lib_mqtt/Socket.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Socket.o AlgoidCom/libs/lib_mqtt/Socket.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Socket.o AlgoidCom/libs/lib_mqtt/Socket.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SocketBuffer.o: AlgoidCom/libs/lib_mqtt/SocketBuffer.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SocketBuffer.o AlgoidCom/libs/lib_mqtt/SocketBuffer.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/SocketBuffer.o AlgoidCom/libs/lib_mqtt/SocketBuffer.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/StackTrace.o: AlgoidCom/libs/lib_mqtt/StackTrace.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/StackTrace.o AlgoidCom/libs/lib_mqtt/StackTrace.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/StackTrace.o AlgoidCom/libs/lib_mqtt/StackTrace.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Thread.o: AlgoidCom/libs/lib_mqtt/Thread.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Thread.o AlgoidCom/libs/lib_mqtt/Thread.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Thread.o AlgoidCom/libs/lib_mqtt/Thread.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Tree.o: AlgoidCom/libs/lib_mqtt/Tree.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Tree.o AlgoidCom/libs/lib_mqtt/Tree.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/Tree.o AlgoidCom/libs/lib_mqtt/Tree.c
 
 ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/utf-8.o: AlgoidCom/libs/lib_mqtt/utf-8.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/utf-8.o AlgoidCom/libs/lib_mqtt/utf-8.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/libs/lib_mqtt/utf-8.o AlgoidCom/libs/lib_mqtt/utf-8.c
 
 ${OBJECTDIR}/AlgoidCom/linux_JSON.o: AlgoidCom/linux_JSON.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/linux_JSON.o AlgoidCom/linux_JSON.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/linux_JSON.o AlgoidCom/linux_JSON.c
 
 ${OBJECTDIR}/AlgoidCom/messagesManager.o: AlgoidCom/messagesManager.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/messagesManager.o AlgoidCom/messagesManager.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/messagesManager.o AlgoidCom/messagesManager.c
 
 ${OBJECTDIR}/AlgoidCom/mqttProtocol.o: AlgoidCom/mqttProtocol.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/mqttProtocol.o AlgoidCom/mqttProtocol.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/mqttProtocol.o AlgoidCom/mqttProtocol.c
 
 ${OBJECTDIR}/AlgoidCom/udpPublish.o: AlgoidCom/udpPublish.c
 	${MKDIR} -p ${OBJECTDIR}/AlgoidCom
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/udpPublish.o AlgoidCom/udpPublish.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AlgoidCom/udpPublish.o AlgoidCom/udpPublish.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
 ${OBJECTDIR}/timerManager.o: timerManager.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/timerManager.o timerManager.c
+	$(COMPILE.c) -O2 -IInclude -IDirectories -IAlgoidCom/libs/lib_json -IAlgoidCom/libs/lib_mqtt -IAlgoidCom -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/timerManager.o timerManager.c
 
 # Subprojects
 .build-subprojects:
