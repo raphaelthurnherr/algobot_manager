@@ -10,7 +10,7 @@
  *
  * Created on 22. juin 2018, 08:45
  */
-#define VERSION "1.0"
+#define VERSION "1.01"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -153,7 +153,7 @@ int kehopsFirmware_check(){
     int bashStatus=-1;
     
     printf("Process check KEHOPS binary file: \n");
-    bashStatus=system("pgrep -x kehops");
+    bashStatus=system("pgrep -x ./kehops");
     
     if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, KEHOPS FIRMWARE IS DOWN, RESTARTING...\n");
