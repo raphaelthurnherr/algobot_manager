@@ -10,7 +10,7 @@
  *
  * Created on 22. juin 2018, 08:45
  */
-#define VERSION "beta 1.0"
+#define VERSION "1.0"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     pid_t pid;
     
     system("clear");
-    printf("Starting Algobot manager %s / build %s\n", VERSION, __DATE__);
+    printf("Starting KEHOPS manager %s / build %s\n", VERSION, __DATE__);
     printf("---------------------------------------\n");
    
 // Création de la tâche pour la gestion de la messagerie avec ALGOID
@@ -68,9 +68,9 @@ int main(int argc, char** argv) {
         // Contrôle du TIMER 100mS
     	if(t100msFlag){
             switch(sequencer){
-    //            case 5:  wsTcpGataway_check(); break;
-                case 5: mosquitto_check(); break;
-                case 10: algoFirmware_check(); break;
+                case 5:  wsTcpGataway_check(); break;
+    //            case 5: mosquitto_check(); break;
+                case 10: kehopsFirmware_check(); break;
                 default : break;
             }		
             
@@ -149,15 +149,15 @@ int mosquitto_check(){
     return 0;
 }
 
-int algoFirmware_check(){
+int kehopsFirmware_check(){
     int bashStatus=-1;
     
-    printf("Process check algobot_onionomega: \n");
-    bashStatus=system("pgrep algobot_onion");
+    printf("Process check KEHOPS binary file: \n");
+    bashStatus=system("pgrep kehops");
     
     if(WEXITSTATUS(bashStatus)){
-        printf("MANAGER->WARNING, ALGOBOT FIRMWARE IS DOWN, RESTARTING...\n");
-        system("./algobot/algobot_onionomega -n algo_cloudsim&");      
+        printf("MANAGER->WARNING, KEHOPS FIRMWARE IS DOWN, RESTARTING...\n");
+        system("./kehops/kehops -n kehops_simu&");      
     }        
     
     printf("\n");
