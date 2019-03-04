@@ -153,7 +153,7 @@ int kehopsFirmware_check(){
     int bashStatus=-1;
     
     printf("Process check KEHOPS binary file: \n");
-    bashStatus=system("pgrep kehops");
+    bashStatus=system("pgrep -x kehops");
     
     if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, KEHOPS FIRMWARE IS DOWN, RESTARTING...\n");
