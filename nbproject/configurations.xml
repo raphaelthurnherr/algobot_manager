@@ -72,6 +72,7 @@
         <itemPath>AlgoidCom/udpPublish.c</itemPath>
         <itemPath>AlgoidCom/udpPublish.h</itemPath>
       </logicalFolder>
+      <itemPath>buildNumber.h</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>timerManager.c</itemPath>
       <itemPath>timerManager.h</itemPath>
@@ -288,6 +289,8 @@
       </item>
       <item path="AlgoidCom/udpPublish.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="buildNumber.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="timerManager.c" ex="false" tool="0" flavor2="0">
@@ -502,6 +505,8 @@
       </item>
       <item path="AlgoidCom/udpPublish.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="buildNumber.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="timerManager.c" ex="false" tool="0" flavor2="0">
@@ -710,6 +715,8 @@
       </item>
       <item path="AlgoidCom/udpPublish.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="buildNumber.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="timerManager.c" ex="false" tool="0" flavor2="0">
@@ -917,6 +924,8 @@
       <item path="AlgoidCom/udpPublish.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="AlgoidCom/udpPublish.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="buildNumber.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>

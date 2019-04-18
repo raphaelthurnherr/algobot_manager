@@ -24,6 +24,7 @@
 #include "linux_json.h"
 #include "udpPublish.h"
 #include "timerManager.h"
+#include "buildNumber.h"
 
 /*
  * 
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
     pid_t pid;
     
     system("clear");
-    printf("Starting KEHOPS manager %s / build %s\n", VERSION, __DATE__);
+    printf("Starting KEHOPS manager %s / %s  build %d\n", VERSION, __DATE__, BUILD_CODE);
     printf("---------------------------------------\n");
    
 // Création de la tâche pour la gestion de la messagerie avec ALGOID
@@ -157,7 +158,8 @@ int kehopsFirmware_check(){
     
     if(WEXITSTATUS(bashStatus)){
         printf("MANAGER->WARNING, KEHOPS FIRMWARE IS DOWN, RESTARTING...\n");
-        system("./kehops/kehops -n kehops_simu&");      
+        //system("./kehops/kehops -n kehops_simu&");      
+        system("./kehops/kehops&");      
     }        
     
     printf("\n");
