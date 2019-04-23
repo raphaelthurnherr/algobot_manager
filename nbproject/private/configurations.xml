@@ -29,8 +29,10 @@
           <runcommandpicklistitem>sh -c "/home/raph-pnp/NetBeansProjects/algobotManager/runRemote.sh"</runcommandpicklistitem>
           <runcommandpicklistitem>sh -c "/home/raph-pnp/NetBeansProjects/kehopsManager/runRemote.sh"</runcommandpicklistitem>
           <runcommandpicklistitem>sh -c "/home/raph-pnp/Documents/dev/embedded_soft/kehopsManager/runRemote.sh"</runcommandpicklistitem>
+          <runcommandpicklistitem>sh -c "/home/raph/ownCloud/dev/Projets/kehopsManager/runRemote.sh"</runcommandpicklistitem>
+          <runcommandpicklistitem>sh -c "/home/raph-pnp/ownCloud/dev/Projets/kehopsManager/runRemote.sh"</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>sh -c "/home/raph-pnp/Documents/dev/embedded_soft/kehopsManager/runRemote.sh"</runcommand>
+        <runcommand>sh -c "/home/raph-pnp/ownCloud/dev/Projets/kehopsManager/runRemote.sh"</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
@@ -62,8 +64,9 @@
       <runprofile version="9">
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>sh -c "/home/raph-pnp/ownCloud/dev/Projets/kehopsManager/runRemote.sh"</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <runcommand>sh -c "/home/raph-pnp/ownCloud/dev/Projets/kehopsManager/runRemote.sh"</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
